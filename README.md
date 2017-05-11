@@ -1,8 +1,10 @@
 # SimpleHTTPServer
-Simple http server use C++11 and Boost Asio to realize simple http server.
 
 服务器开发中 Web 服务是一个基本的代码单元，将服务端的请求和响应部分的逻辑抽象出来形成框架，能够做到最高级别的框架级代码复用。本次项目将综合使用 C++11 及 Boost 中的 Asio 实现 HTTP 和 HTTPS 的服务器框架。
-项目涉及的知识点
+
+可以参考实验楼相关文档:https://www.shiyanlou.com/courses/568#sign-modal
+
+### 项目涉及的知识点
 
 1. C++基本知识
 > * 面向对象
