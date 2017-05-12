@@ -15,6 +15,9 @@
 
 #include <map>
 #include <string>
+#include <thread>
+
+#include <boost/asio.hpp>
 
 namespace HttpWeb {
   struct Request {
@@ -49,7 +52,9 @@ namespace HttpWeb {
     std::vector<ResourceType::iterator> all_resources_;
 
     virtual void Accept();
-    void ProcessRequest(std::shared_ptr<socket_type> socket) const; 
+    Request ParseRequest(std::istream& stream) const;
+    void ProcessRequest(std::shared_ptr<socket_type> socket) const;
+    void Respond(std::shared_ptr<socket_type> socket, std::shared_ptr<Request> request) const;
   };
   
 } // namespace HttpWeb
