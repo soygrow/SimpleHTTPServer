@@ -8,15 +8,19 @@
  * ---------------------------------------------------------------------------
  */
 
+#include "handler.hpp"
+#include "server_base.hpp"
 #include "server_http.hpp"
 
-namespace HttpWeb {
+#include <fstream>
 
-  int main() {
+namespace HttpWeb {
+  
+  int main(int argc, char** argv) {
     Server<HTTP> server(12345, 4);
     StartServer<Server<HTTP>> (server);
 
-    return 0
+    return 0;
   }
   
 } // namespace HttpWeb
