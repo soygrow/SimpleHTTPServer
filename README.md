@@ -40,3 +40,8 @@
 > * boost::asio::ssl::context::sslv23
 > * boost::asio::ssl::context::pem
 > * boost::system::error_code
+
+
+### 注意事项
+1. BUILD文件是我使用bazel进行编译时需要的文件，如果你不是使用bazel进行编译，而是使用makefile进行编译，那么可以忽略该文件
+2. 如果你的gcc版本是4.9.0之前的版本，那么必须升级你的gcc，不然regex库不支持ECMAScript的正则语法，换句话说，4.9以前的版本对C++11标准库支持的并不好，所以需要升级你的gcc
