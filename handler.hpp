@@ -11,6 +11,7 @@
 #include "server_base.hpp"
 
 #include <fstream>
+#include <iostream>
 
 namespace HttpWeb {
   
@@ -44,7 +45,7 @@ namespace HttpWeb {
     };
 
     server.default_resource_["^/?(.*)$"]["GET"] = [](std::ostream& response, Request& request) {
-      std::string filename = "web/";
+      std::string filename = "www/";
       std::string path = request.path_match[1];
 
       size_t last_pos = path.rfind(".");
@@ -65,6 +66,7 @@ namespace HttpWeb {
 
         filename += "index.html";
       }
+      std::cout << filename << std::endl;
       ifs.open(filename, std::ifstream::in);
 
       if (ifs) {

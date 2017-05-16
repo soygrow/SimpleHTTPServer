@@ -22,10 +22,9 @@ cc_binary(
           ":server_http",
          ],
   copts = [
-          "-I/usr/include/boost",
-          "-L/usr/lib",
-          "-std=c++11",
-         ],
-  linkopts = ["-pthread -lboost_thread -lboost_system"],
+           "-I/usr/include/boost",
+           "-L/usr/lib",
+          ],
+  linkopts = ["-pthread -lboost_thread -lboost_system -lboost_regex"],
   
 )

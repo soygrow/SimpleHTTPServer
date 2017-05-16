@@ -13,14 +13,11 @@
 #include "server_http.hpp"
 
 #include <fstream>
-
-namespace HttpWeb {
   
-  int main(int argc, char** argv) {
-    Server<HTTP> server(12345, 4);
-    StartServer<Server<HTTP>> (server);
+int main(int argc, char** argv) {
+  HttpWeb::Server<HttpWeb::HTTP> server(12345, 4);
+  HttpWeb::StartServer<HttpWeb::Server<HttpWeb::HTTP>> (server);
 
-    return 0;
-  }
+  return 0;
+}
   
-} // namespace HttpWeb
