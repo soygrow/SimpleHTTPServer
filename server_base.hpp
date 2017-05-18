@@ -71,7 +71,7 @@ namespace HttpWeb {
       // If num_threads_ is > 1, m_io_service_.run() can be the thread
       // pool which is used deal with multi requests.
       // emplace_back can avoid the extra copy or move operation required
-      // when using push_bach
+      // when using push_back
       for (size_t c = 1; c < num_threads_; c ++) {
         threads_.emplace_back([this] () {
             m_io_service_.run();
